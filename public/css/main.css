@@ -1,0 +1,28 @@
+.contanier {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+.header-text {
+  font-size: 12ovh;
+  font-family: sans-serif;
+}
+.bio-text {
+  text-align: center;
+  width: 20rem;
+}
+.tabs-links-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.tabs-item {
+  float: left;
+  padding: 10px;
+}
+.tabs-item {
+  align-self: center;
+}
