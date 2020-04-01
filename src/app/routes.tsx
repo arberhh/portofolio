@@ -1,8 +1,9 @@
 import * as React from "react";
-import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Skills from "./tab-items/skils";
-import Projects from "./tab-items/projects";
-import Experience from "./tab-items/experience";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Skills from "./pages/skils";
+import Projects from "./pages/projects";
+import Experience from "./pages/experience";
+import Contact from "./pages/contact";
 
 // Each logical "route" has two components, one for
 // the sidebar and one for the main area. We want to
@@ -15,7 +16,7 @@ import Experience from "./tab-items/experience";
 // order they would appear in a <Switch>.
 const routes = [
   {
-    path: "/skills",
+    path: "/",
     exact: true,
     sidebar: () => <Skills />,
     main: () => null
@@ -29,6 +30,11 @@ const routes = [
     path: "/experience",
     sidebar: () => <Experience />,
     main: () => null
+  },
+  {
+    path: "/contact",
+    sidebar: () => <Contact />,
+    main: () => null
   }
 ];
 
@@ -38,22 +44,23 @@ export default function Tabs() {
       <div>
         <div
           style={{
-            padding: "10px",
-            // width: "40%",
-            background: "#f0f0f0"
+            padding: "10px"
           }}
         >
-          <ul className="tabs-links-ul  ">
-            <li className="tabs-item">
-              <Link to="/skills">Skills</Link>
-            </li>
-            <li className="tabs-item">
+          <div className="tabs-container">
+            <div className="tabs-item">
+              <Link to="/">Skills</Link>
+            </div>
+            <div className="tabs-item">
               <Link to="/projects">Projects</Link>
-            </li>
-            <li className="tabs-item">
+            </div>
+            <div className="tabs-item">
               <Link to="/experience">Experience</Link>
-            </li>
-          </ul>
+            </div>
+            <div className="tabs-item">
+              <Link to="/contact">Contact</Link>
+            </div>
+          </div>
 
           <Switch>
             {routes.map((route, index) => (
@@ -69,21 +76,6 @@ export default function Tabs() {
                 path={route.path}
                 exact={route.exact}
                 children={<route.sidebar />}
-              />
-            ))}
-          </Switch>
-        </div>
-
-        <div style={{ flex: 1, padding: "10px" }}>
-          <Switch>
-            {routes.map((route, index) => (
-              // Render more <Route>s with the same paths as
-              // above, but different components this time.
-              <Route
-                key={index}
-                path={route.path}
-                exact={route.exact}
-                children={<route.main />}
               />
             ))}
           </Switch>

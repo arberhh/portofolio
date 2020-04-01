@@ -1,9 +1,29 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+a {
+  color: white;
+  text-decoration: black;
+  font-family: sans-serif;
+}
+.row {
+  display: flex;
+}
+a:visited {
+  color: white;
+}
 .contanier {
+  padding-top: 10px;
   display: flex;
   flex: 1;
   flex-direction: column;
-  align-content: center;
   align-items: center;
+  background-color: wheat;
+}
+.img {
+  border-radius: 150px;
 }
 .header-text {
   font-size: 12ovh;
@@ -11,17 +31,22 @@
 }
 .bio-text {
   text-align: center;
-  width: 20rem;
+  width: 50rem;
 }
-.tabs-links-ul {
-  list-style-type: none;
+.tabs-container {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .tabs-item {
   float: left;
-  padding: 10px;
+  padding: 10;
+  margin: 10px;
+  width: 20rem;
+  text-align: center;
+  background-color: black;
 }
 .tabs-item {
   align-self: center;
